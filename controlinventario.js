@@ -17,7 +17,6 @@ class Producto{
 }
 }
 
-
 //Agregar
 
 var btnadd = document.querySelector("#btnadd")
@@ -29,7 +28,6 @@ btnadd.addEventListener("click", () => {
 
     if (inventario.length<=19) {
         inventario.push(nuevoProducto)
-        inventario[Producto] = codigoP.value
     }
     console.log(inventario)
 }
