@@ -1,5 +1,9 @@
 var inventario= new Array();
-
+var codigoP = document.querySelector("#codigo1")
+var nombreP = document.querySelector("#nombre1")
+var descripcionP = document.querySelector("#descripcion1")
+var cantidadP = document.querySelector("#cantidad1")
+var costoP = document.querySelector("#costo1")
 
 class Producto{
     constructor(codigo, nombre, descripción, cantidad, costo, valormerc){
@@ -9,6 +13,7 @@ class Producto{
     this.cantidad=cantidad
     this.costo=costo
     this.valormerc=(cantidad * costo)
+
 }
 }
 
@@ -18,11 +23,13 @@ inventario.push(prueba);
 console.log(inventario);
 
 //Agregar
-var numero = document.querySelector("#agregar1")
+
 var btnadd = document.querySelector("#btnadd")
 
 btnadd.addEventListener("click", () => {
-    let nuevoProducto = new Producto();
+    let nuevoProducto = new Producto(codigoP.value, nombreP.value, descripcionP.value, cantidadP.value, costoP.value);
+    inventario.push(nuevoProducto)
+    console.log(inventario)
 }
 )
 
