@@ -1,8 +1,5 @@
-var inventario= new Array(20);
+var inventario= new Array();
 
-for (let i = 0; i < inventario.length; i++) {
-    inventario[i]=i
-}
 
 class Producto{
     constructor(codigo, nombre, descripción, cantidad, costo, valormerc){
@@ -17,25 +14,32 @@ class Producto{
 
 let prueba= new Producto("AAAA", "Coca", "Refresco", 2, 15,);
 console.log(prueba);
+inventario.push(prueba);
+console.log(inventario);
 
 //Agregar
 var numero = document.querySelector("#agregar1")
 var btnadd = document.querySelector("#btnadd")
 
+btnadd.addEventListener("click", () => {
+    let nuevoProducto = new Producto();
+}
+)
+
 //Borrar
-var numero = document.querySelector("#borrar1")
-var btnadd = document.querySelector("#btndelete")
+var borrar = document.querySelector("#borrar1")
+var btndelete = document.querySelector("#btndelete")
 
 //Buscar
-var numero = document.querySelector("#buscar1")
-var btnadd = document.querySelector("#btnsearch")
+var buscar = document.querySelector("#buscar1")
+var btnsearch = document.querySelector("#btnsearch")
 
 //Listar
-var btnadd = document.querySelector("#btnlist")
+var btnlist = document.querySelector("#btnlist")
 
 //Listar Inverso
-var btnadd = document.querySelector("#btninverselist")
+var btninverselist = document.querySelector("#btninverselist")
 
 //Posición
-var numero = document.querySelector("#posicion1")
-var btnadd = document.querySelector("#btnposition")
+var posicion = document.querySelector("#posicion1")
+var btnposition = document.querySelector("#btnposition")
