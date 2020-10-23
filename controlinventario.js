@@ -6,29 +6,31 @@ var cantidadP = document.querySelector("#cantidad1")
 var costoP = document.querySelector("#costo1")
 
 class Producto{
-    constructor(codigo, nombre, descripción, cantidad, costo, valormerc){
+    constructor(codigo, nombre, descripción, cantidad, costo, valormercancia){
     this.codigo=codigo
     this.nombre=nombre
     this.descripción=descripción
     this.cantidad=cantidad
     this.costo=costo
-    this.valormerc=(cantidad * costo)
+    this.valormercancia=(cantidad * costo)
 
 }
 }
 
-let prueba= new Producto("AAAA", "Coca", "Refresco", 2, 15,);
-console.log(prueba);
-inventario.push(prueba);
-console.log(inventario);
 
 //Agregar
 
 var btnadd = document.querySelector("#btnadd")
 
 btnadd.addEventListener("click", () => {
-    let nuevoProducto = new Producto(codigoP.value, nombreP.value, descripcionP.value, cantidadP.value, costoP.value);
-    inventario.push(nuevoProducto)
+    let contador=0
+    let nuevoProducto =(new Producto(codigoP.value, nombreP.value, descripcionP.value, cantidadP.value, costoP.value));
+
+
+    if (inventario.length<=19) {
+        inventario.push(nuevoProducto)
+        inventario[Producto] = codigoP.value
+    }
     console.log(inventario)
 }
 )
@@ -37,10 +39,20 @@ btnadd.addEventListener("click", () => {
 var borrar = document.querySelector("#borrar1")
 var btndelete = document.querySelector("#btndelete")
 
+btndelete.addEventListener("click", () => {
+    let posicion = inventario.indexOf(borrar.value)
+    inventario.splice(posicion,1)
+    console.log(inventario)
+})
+
 //Buscar
 var buscar = document.querySelector("#buscar1")
 var btnsearch = document.querySelector("#btnsearch")
 
+btnsearch.addEventListener("click", () => {
+    
+    console.log(inventario.indexOf(buscar.value))
+})
 //Listar
 var btnlist = document.querySelector("#btnlist")
 
