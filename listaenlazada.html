@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Document</title>
+</head>
+<style>
+
+input, label {
+    display: block;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  label {
+    margin-top: 10px;
+  }
+  
+  input {
+    height: 30px;
+    padding: 5px;
+    outline: none;
+    border-style: none;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-top: 5px;
+    font-size: 15px;
+    color: #000000;
+    margin: 5px;
+    background-color: #e2e2e2;
+    width: 250px;
+  }
+
+  
+  
+  textarea {
+    color: rgb(0, 0, 0);
+    background-color: #e7e7e7;
+  }
+  
+  .container {
+    width: 250px;
+    background-color: #42b8a8;
+    color: #FFF;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .panel {
+    margin-top: 10px;
+  }
+  
+  .column {
+    float: left;
+    width: 45%;
+    padding: 0 10px;
+  }
+  
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  button {
+    color: rgb(0, 0, 0);
+    margin: 5px;
+    background-color: #b7f4ff;
+  
+  }
+  button:hover {
+    cursor: pointer;
+    border: 1px solid #67a4ff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+  }
+  
+  button:active {
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    background-color: #67a4ff;
+    box-shadow: none;
+  }
+</style>
+<body>
+    
+        <div>
+            <h2>Agregar producto</h2>
+            <form id='agregarForm' method='post'></form>
+                <input type='text' id='codigo' placeholder='Codigo de producto'>
+                <input type='text' id='producto' placeholder='Nombre de producto'>
+                <input type='text' id='cantidad' placeholder='Cantidad'>
+                <input type='text' id='costo' placeholder='Costo'>
+                <textarea  id='decripcion' cols='30' rows='10' placeholder='Descripcion'></textarea>
+                <div>
+                    <button type='submit'>Agregar</button>
+                </div>
+            </form>
+        </div>
+        <div>
+            <h2>Agregar en posicion especifica</h2>
+            <form id='agregarEspecifico' method='post'>
+                <input type='text' id='posicion1' placeholder='Posicion a insertar'>
+                <input type='text' id='codigo1' placeholder='Codigo de producto'>
+                <input type='text' id='producto1' placeholder='Nombre de producto'>
+                <input type='text' id='cantidad1' placeholder='Cantidad'>
+                <input type='text' id='costo1' placeholder='Costo'>
+                <textarea  id='decripcion1' cols='30' rows='10' placeholder='Descripcion'></textarea>
+                <div>
+                    <button type='submit'>Agregar</button>
+                </div>
+            </form>
+        </div>
+        <div>
+            <h2>Agregar al inicio</h2>
+            <form id='agregarInicio' method='post'>
+                <input type='text' id='codigo2' placeholder='Codigo de producto'>
+                <input type='text' id='producto2' placeholder='Nombre de producto'>
+                <input type='text' id='cantidad2' placeholder='Cantidad'>
+                <input type='text' id='costo2' placeholder='Costo'>
+                <textarea  id='decripcion2' cols='30' rows='10' placeholder='Descripcion'></textarea>
+                <div>
+                    <button type='submit'>Agregar</button>
+                </div>
+            </form>
+        </div>
+   
+    
+        <button onclick='eliminarInicio()'>Eliminar inicio</button>
+        <button onclick='invertir()'>Invertir</button>
+        <div>
+            <input type='text' id='buscarInput' placeholder='Buscar por codigo'>
+            <button onclick="buscar()">Buscar</button>
+        </div>
+    
+    
+        <table>
+            <thead>
+                <tr>
+                    <th>Codigo de producto</th>
+                    <th>Producto</th>
+                    <th>Descripcion</th>
+                    <th>Cantidad</th>
+                    <th>Costo*unidad</th>
+                    <th>Costo total de mercancia</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    
+    
+        <h3>Historial</h3>
+        <div id="historialContenido"></div>
+    
+    <script src='./index.js' ></script>
+    <!-- <script src='./clases.js' type='module'></script> -->
+    <!-- <script src='clases.js' type='module'></script> -->
+</body>
+</html>
