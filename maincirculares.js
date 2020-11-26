@@ -30,6 +30,16 @@ class PillarOfAutumn {
         if (inicio===null) {
             this.inicio=x
         }
+        this.tamaño++;
+        this.imprimir();
+    }
+    imprimir() {
+        lista.innerHTML = "";
+        let aux = this.inicio;
+        while(aux){
+            lista.innerHTML += aux.articleToHtml();
+            aux = aux.siguiente;
+        }
     }
 }
 
@@ -40,4 +50,8 @@ btnAgregar.addEventListener("click", () => {
     let tiempoBase = (document.querySelector('#tiempoBase'));
     let base1 = new Base(nombreBase.value, tiempoBase.value);
     forwardUntoDawn.agregarPelican(base1);
+});
+
+btnImprimir.addEventListener("click", () => {
+    forwardUntoDawn.imprimir();
 });
