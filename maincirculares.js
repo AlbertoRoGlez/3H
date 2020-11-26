@@ -27,6 +27,17 @@ class PillarOfAutumn {
         this.tamaño=0
     }
     agregarPelican(x){
-        
+        if (inicio===null) {
+            this.inicio=x
+        }
     }
 }
+
+let forwardUntoDawn = new PillarOfAutumn();
+
+btnAgregar.addEventListener("click", () => {
+    let nombreBase = (document.querySelector('#nombreBase'));
+    let tiempoBase = (document.querySelector('#tiempoBase'));
+    let base1 = new Base(nombreBase.value, tiempoBase.value);
+    forwardUntoDawn.agregarPelican(base1);
+});
