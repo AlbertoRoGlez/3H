@@ -10,12 +10,12 @@ class BasePelican {
     constructor(nombre, minutos){
         this.nombre=nombre
         this.minutos=minutos
-        this.siguente=null
+        this.siguiente=null
     }
     articleToHtml() {
         let productString = '<li class="list-group-item">'
         for (let key in this) {
-            productString += <div>${key}: ${this[key]}</div>
+            productString += `<div>${key}: ${this[key]}</div>`;
         }
         return productString + "</li>"
     }
@@ -26,12 +26,19 @@ class PillarOfAutumn {
         this.inicio=null
         this.tamaño=0
     }
-    agregarPelican(x){
-        if (inicio===null) {
-            this.inicio=x
+    agregarPelican(nuevo){
+        if (this.inicio===null) {
+            this.inicio=nuevo
         }
-        this.tamaño++;
-        this.imprimir();
+        else {
+            let aux=this.inicio
+            while (aux.siguiente!==null) {
+                aux=aux.siguiente
+            }
+            aux.siguiente=nuevo
+        }
+        this.tamaño++
+        this.imprimir()
     }
     imprimir() {
         lista.innerHTML = "";
@@ -48,7 +55,7 @@ let forwardUntoDawn = new PillarOfAutumn();
 btnAgregar.addEventListener("click", () => {
     let nombreBase = (document.querySelector('#nombreBase'));
     let tiempoBase = (document.querySelector('#tiempoBase'));
-    let base1 = new Base(nombreBase.value, tiempoBase.value);
+    let base1 = new BasePelican(nombreBase.value, tiempoBase.value);
     forwardUntoDawn.agregarPelican(base1);
 });
 
