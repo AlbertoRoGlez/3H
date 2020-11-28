@@ -1,0 +1,59 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Listas circulares</title>
+    </head>
+    
+    <body>
+    
+        <h1>Central de autobuses</h1>
+    
+        <div>
+            <div>
+                <form>
+    
+                    <label for="text">Introduce el nombre de una base:</label>
+                    <input type="text" id="nombreBase">
+                    <p></p>
+                    <label for="text">Introduce el tiempo de recorrido de la base:</label>
+                    <input type="number" id="tiempoBase">
+                    <p></p>
+                    <input type="button" value="Agregar base" id="btnAgregar" />
+    
+                    <p></p>
+                    <label for="text">Buscar una base:</label>
+                    <input type="text" id="buscarBase">
+                    <input type="button" value="Buscar base" id="btnBuscar" />
+
+                    <p></p>
+                    <label for="text">Eliminar una base:</label>
+                    <input type="text" id="eliminarBase">
+                    <input type="button" value="Eliminar" id="btnEliminar" />
+    
+                    <p></p>
+                    <input type="button" value="Imprimr bases" id="btnImprimir" />
+
+                    <p></p>
+                    <label for="text">Base inicio:</label>
+                    <input type="text" id="baseInicio">
+                    <p></p>
+                    <label for="text">Hora inicio:</label>
+                    <input type="text" id="horaInicio">
+                    <p></p>
+                    <label for="text">Hora fin:</label>
+                    <input type="text" id="horaFin">
+                    <p></p>
+                    <input type="button" value="Crear recorrido" id="btnCrearRecorrido" />
+    
+                </form>
+            </div>
+    
+            <div>
+                <ul id="lista" class="list-group"></ul>
+            </div>
+        </div>    
+</body>
+<script src="maincirculares.js"></script>
+</html>
