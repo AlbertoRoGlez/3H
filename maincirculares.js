@@ -19,6 +19,14 @@ class BasePelican {
         }
         return productString + "</li>"
     }
+    recorridoToHtml(base, tiempo) {
+        let productString = '<li class="list-group-item">'
+        for (let key in this) {
+            productString += `<div>${key}: ${this[key]}</div>`
+        }
+        let pedrito='Usted se encuentra en la base ' + base + ' a la hora ' + tiempo
+        return productString+pedrito + "</li>"
+    }
 }
 
 class PillarOfAutumn {
@@ -72,17 +80,20 @@ class PillarOfAutumn {
         
     }
 
-    recorrido(horaInicio, baseInicio, horaFinal) {
-        let baseaux=this.inicio
+    recorrido(baseInicio, horaInicio, horaFinal) {
+        lista.innerHTML=""
+        let baseaux=this.buscar(baseInicio)
         console.log(baseaux)
         let horaaux=Number(horaInicio)
-        console.log(horaaux)
+        console.log(horaaux)    
 
         while (horaaux<horaFinal) {
+            lista.innerHTML+=baseaux.recorridoToHtml(baseaux, horaaux)
             baseaux=baseaux.siguiente
             horaaux+=Number(baseaux.minutos)
             console.log(horaaux)
         }
+        lista.innerHTML+=baseaux.recorridoToHtml(baseaux, horaaux)
     }
 
     eliminarBase(nombre) {
@@ -145,4 +156,9 @@ btnCrearRecorrido.addEventListener("click", () => {
     let horaInicio = document.querySelector("#horaInicio");
     let horaFinal = document.querySelector("#horaFin");
     forwardUntoDawn.recorrido(baseInicio.value, horaInicio.value, horaFinal.value);
+});
+
+btnEliminar.addEventListener("click", () => {
+    var eliminarBase = document.querySelector("#eliminarBase");
+    forwardUntoDawn.eliminarBase(eliminarBase.value);
 });
